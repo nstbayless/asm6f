@@ -6,6 +6,8 @@ With modifications by freem, nicklausw, and Sour
 
 ASM6f is a fork of ASM6, primarily targeted at NES/Famicom development.
 
+See readme-original.txt for the features of ASM6.
+
 --------------------------------------------------------------
 Features compared to stock ASM6
 --------------------------------------------------------------
@@ -211,6 +213,16 @@ HUNSTABLE
                 HUNSTABLE
                 xaa #7
 
+INCNES
+    
+    Includes the given NES file in its entirety, reading its header.
+    Fatal error if the header is invalid.
+    
+    Identical to:
+    
+        INCINES "file.nes"
+        INCBIN "file.nes", $10    
+
 --------------------------------------------------------------
 iNES directives
 --------------------------------------------------------------
@@ -250,6 +262,11 @@ NES2BRAM x
 
 NES2CHRBRAM x
         Amount of battery-packed CHR RAM in NES ROM.
+        
+INCINES file.nes
+    Reads the nes header from the given binary file.
+    Reads both iNES and NES2 headers.
+    Fatal error if the header is invalid.
 
 --------------------------------------------------------------
 loopy's original To-Do List
